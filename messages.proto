@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message RequestData {optional string page_name = 1;
+  optional string client_address = 2;
+  optional string request_body = 3;}
+
+message ResponseBody {enum StatusEnum {UNDEFINED = 0;
+  RECEIVED = 1;
+  RECORDED = 2;
+  ERROR_WHILE_RECORDING = 3;}
+  StatusEnum status = 1;}
+
+
+service RequestHandler {
+  rpc HandleRequest(RequestData) returns(ResponseBody) {}
+}
