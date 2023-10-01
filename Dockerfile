@@ -1,5 +1,5 @@
 FROM python:slim
-LABEL authors="Rajendra Kumar R Yadav"
+LABEL MAINTAINER "Rajendra Kumar R Yadav"
 WORKDIR /app
 COPY requirements.txt .
 RUN /bin/bash -c "pip install -r requirements.txt"
