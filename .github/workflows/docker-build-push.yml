@@ -23,5 +23,5 @@ jobs:
         with:
           push: true
           tags: |
-            rajendrayadav/grpcserver:${{ github.sha }}
+            rajendrayadav/grpcserver:${{ github.sha }} 
             rajendrayadav/grpcserver:latest
