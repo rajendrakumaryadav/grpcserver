@@ -22,4 +22,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: $username/grpcserver:$(date +%s)
+          tags: |
+            rajendrayadav/grpcserver:${{ github.sha }}
+            rajendrayadav/grpcserver:latest

@@ -1,7 +1,7 @@
 ### To run this application you need two repo
 | This is simple Demo Application as Microservices between 2 server.
-1. webServer: which is running Flask-Server and also sending some traces to the grpcServer
-2. grpcServer: It is accepting data like
+1. [webServer](https://github.com/rajendrakumaryadav/webServer): which is running Flask-Server and also sending some traces to the grpcServer
+2. [grpcServer](https://github.com/rajendrakumaryadav/grpcserver): It is accepting data like
 
 ```text
 Message Received: page_name: "http://127.0.0.1:5000/"      
