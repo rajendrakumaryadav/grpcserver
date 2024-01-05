@@ -25,8 +25,3 @@ jobs:
           tags: |
             rajendrayadav/grpcserver:${{ github.sha }} 
             rajendrayadav/grpcserver:latest
-      - name: Update Docker Hub overview
-        uses: christian-korneck/dockerhub-description@v4
-        with:
-          repository: rajendrakumaryadav/grpcserver
-          readme_file: README.md
