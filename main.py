@@ -1,9 +1,9 @@
 from concurrent import futures
-
 import grpc
-
+import logging
 import messages_pb2 as pb
 import messages_pb2_grpc as gpb
+
 
 
 class RequestHandlerServer(gpb.RequestHandlerServicer):
@@ -24,7 +24,7 @@ def main():
 
 if __name__ == '__main__':
     try:
-        print("Running the GRPC server on port 50051")
+        logging.warning("Running the GRPC server on port 50051")
         main()
     except KeyboardInterrupt as e:
-        print("Closing the application...")
+        logging.warning("Closing the application...")
