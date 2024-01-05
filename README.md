@@ -26,6 +26,13 @@ $ docker network create idocnet
 $ docker run --rm -it --network idocnet --name flaskserver -p 5000:5000 flaskserver
 $ docker run --rm -it --network idocnet --name grpcserer grpcserer
 ```
+> Now, we can set environment to the container while firing it up either using method mentioned in step 4 or through 
+> kubernetes. Default port is 50051 for GRPC. we can customize it during runtime.
+```bash
+$ docker run --rm -it --network idocnet -e HOST='50051' --name grpcserer grpcserer
+```
+
+
 5. now, inspect the network and take a look if all services are attached to network or not.
 ```bash
 $  docker network inspect idocnet

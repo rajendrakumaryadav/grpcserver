@@ -1,3 +1,4 @@
 .idea
 .github
 .vscode
+__pycache__/

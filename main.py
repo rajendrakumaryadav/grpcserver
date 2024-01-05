@@ -1,9 +1,11 @@
-from concurrent import futures
-import grpc
 import logging
+import os
+from concurrent import futures
+
+import grpc
+
 import messages_pb2 as pb
 import messages_pb2_grpc as gpb
-
 
 
 class RequestHandlerServer(gpb.RequestHandlerServicer):
@@ -15,9 +17,10 @@ class RequestHandlerServer(gpb.RequestHandlerServicer):
 
 
 def main():
+    grpc_port = os.getenv('PORT', '50051')
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     gpb.add_RequestHandlerServicer_to_server(RequestHandlerServer(), server)
-    server.add_insecure_port('[::]:50051')
+    server.add_insecure_port(f'[::]:{grpc_port}')
     server.start()
     server.wait_for_termination()
 
