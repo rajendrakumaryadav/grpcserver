@@ -25,3 +25,4 @@ jobs:
           tags: |
             rajendrayadav/grpcserver:${{ github.sha }} 
             rajendrayadav/grpcserver:latest
+
