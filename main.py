@@ -18,9 +18,10 @@ class RequestHandlerServer(gpb.RequestHandlerServicer):
 
 def main():
     grpc_port = os.getenv('PORT', '50051')
+    host_name = os.getenv('HOSTNAME', 'grpcserver')
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     gpb.add_RequestHandlerServicer_to_server(RequestHandlerServer(), server)
-    server.add_insecure_port(f'[::]:{grpc_port}')
+    server.add_insecure_port(f':{grpc_port}')
     server.start()
     server.wait_for_termination()
 
